@@ -24,6 +24,12 @@ Follow along as we explore the capabilities of Google ADK and develop increasing
 - **Target price range** for 3-month outlook
 - **Supporting factors and risks** for making informed decisions
 
+## Demo
+
+Check out the demo video to see the Stock Analyzer in action:
+
+[Demo Video](Assets/Demo-video.mov)
+
 ## Setup
 
 1. Install required packages:
@@ -85,19 +91,9 @@ The analysis output includes:
 - Target price range for next 3 months
 - Key positive and negative factors
 
-## Coming in Future Blogs
-
-In upcoming installments of this series, we'll enhance this basic analyzer with:
-
-- **Portfolio management** - Analyze multiple stocks and suggest allocation strategies
-- **Technical indicators** - Add real data and advanced technical analysis
-- **Visualization** - Create charts and visual representations of analysis
-- **Sentiment analysis** - Incorporate sentiment from social media and news
-- **Agent memory** - Add persistent memory for tracking past recommendations
-- **Mobile interface** - Make the analyzer accessible on mobile devices
 
 ## Notes
 
 - Analysis takes approximately 1-3 minutes to complete depending on query complexity
 - API rate limits may apply when performing multiple analyses in succession
-- This tool is for informational purposes only and should not be considered professional financial advice 
+- This tool is for informational purposes only and should not be considered professional financial advice
