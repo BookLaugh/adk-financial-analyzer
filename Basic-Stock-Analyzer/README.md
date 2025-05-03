@@ -28,7 +28,7 @@ Follow along as we explore the capabilities of Google ADK and develop increasing
 
 Check out the demo video to see the Stock Analyzer in action:
 
-<video controls src="Assets/Demo-video.mp4" title="Stock Analyzer Demo"></video>
+<video controls src="./Assets/Demo-video.mp4" title="Stock Analyzer Demo"></video>
 
 ## Setup
 
