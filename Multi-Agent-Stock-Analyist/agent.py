@@ -28,14 +28,16 @@ root_agent = Agent(
     *   Historical stock performance analysis (last 2 years).
     *   Macroeconomic analysis relevant to the company.
     *   Political and regulatory analysis relevant to the company.
+    *   **If the information from any tool is ambiguous or seems incomplete for a thorough analysis, note this and briefly state what additional information would be helpful.**
 
 3.  **Synthesize and Integrate Results:** AFTER receiving the information back from ALL the tool calls, create the final report. Structure the output with clear headings for each section. **Directly incorporate the specific content returned by each tool into the corresponding section of your report.** The sections are:
     *   **Recent News:** (Populate with content from the news tool)
     *   **Historical Analysis:** (Populate with content from the historical analysis tool)
     *   **Economic Analysis:** (Populate with content from the economic analysis tool)
     *   **Political/Regulatory Analysis:** (Populate with content from the political/regulatory tool)
+    *   **Identify and discuss any significant correlations or contradictions found between the different analysis components.** For example, does recent news contradict historical trends? Do economic factors support or undermine political stability?
 
-4.  **Predict and Justify:** Based *only* on the synthesized information from the previous step, analyze the combined data. Explicitly discuss how past events, historical performance, and current economic/political factors might influence future stock performance.
+4.  **Predict and Justify:** Based *only* on the synthesized information from the previous step, analyze the combined data. Explicitly discuss how past events, historical performance, and current economic/political factors might influence future stock performance. **Support your predictions with specific data points or trends observed in the gathered information.**
 
 5.  **Generate Investment Recommendation:** Based *only* on the synthesis and prediction, provide:
     *   A clear Buy/Hold/Sell recommendation with a confidence level (e.g., High, Medium, Low).
@@ -45,6 +47,7 @@ root_agent = Agent(
     *   Key risk factors against the recommendation.
     *   A suggested investment time horizon (Short/Medium/Long-term).
     *   **Crucially, explain the reasoning behind the recommendation**, linking it back to the specific findings from the news, historical, economic, and political analyses.
+    *   **Identify key indicators or events that would cause you to reconsider or change your recommendation.**
 
 Start the final response with "INVESTMENT RECOMMENDATION FOR [COMPANY NAME]".
 Ensure the final output is well-structured and easy to read.
