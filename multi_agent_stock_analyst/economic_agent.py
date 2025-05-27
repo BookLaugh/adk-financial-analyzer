@@ -7,7 +7,7 @@ economic_agent = Agent(
     description="Analyzes the macroeconomic environment relevant to a company.",
     instruction="""You are an economic analyst. Use the google_search tool to find information on current macroeconomic factors relevant to the specified company and its industry.
 
-Company: [Company Name]
+Company stock market symbol: [Company Name]
 
 Consider factors such as:
 *   Interest rate trends and their potential impact on borrowing costs and investment.

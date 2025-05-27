@@ -8,7 +8,7 @@ from google.adk.runners import Runner
 from google.adk.sessions import InMemorySessionService
 from google.genai import types
 
-from agent import root_agent
+from .agent import root_agent
 
 # Import specialized agents for the runner
 
@@ -26,13 +26,13 @@ print("✅ API key is configured.")
 async def analyze_stock(company_name, runner, session_service):
     """Analyze a stock using the Basic Stock Analyzer agent."""
     # Set up session using the provided service
-    session = session_service.create_session(
+    session = await session_service.create_session(
         app_name="multi_agent_stock_analyzer", user_id="cli_user"
     )
 
     # Create query
     query = (
-        f"Analyze {company_name} stock. Should I invest in it? Provide a"
+        f"Analyze stock with the following symbol: {company_name}. Should I invest in it? Provide a"
         " comprehensive analysis."
     )
     content = types.Content(role="user", parts=[types.Part(text=query)])
@@ -56,8 +56,18 @@ async def analyze_stock(company_name, runner, session_service):
                     if part.function_call.name == 'google_search':
                         search_count += 1
                         print(f"🔍 Search #{search_count}: Finding information...")
+                    elif part.function_call.name == 'company_overview':
+                        print(f"Checking AlphaVantage API")
                 elif hasattr(part, 'function_response'):
-                    print(f"✅ Search result received")
+                    if hasattr(part.function_call, 'name'):
+                        if part.function_call.name == 'google_search':
+                            print(f"✅ Search result received")
+                        elif part.function_call.name == 'company_overview_tool':
+                            print(f"AlphaVantage API call returned")
+                        else:
+                            print(f"Received function response: {part.function_call}")
+                    else:
+                        print(f"Received function response: {part.function_call}")
 
         # Get final response
         if hasattr(event, 'is_final_response') and event.is_final_response:
@@ -86,9 +96,9 @@ async def main():
     if len(sys.argv) > 1:
         company = sys.argv[1]
     else:
-        company = input("\nEnter a company name to analyze (or press Enter for Microsoft): ").strip()
+        company = input("\nEnter a company ticker to analyze (or press Enter for MSFT): ").strip().upper()
         if not company:
-            company = "Microsoft"
+            company = "MSFT"
 
     try:
         start_time = time.time()

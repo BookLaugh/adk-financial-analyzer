@@ -7,7 +7,7 @@ political_agent = Agent(
     description="Analyzes the political and regulatory environment relevant to a company.",
     instruction="""You are a political and regulatory analyst. Use the google_search tool to find information on current and potential political and regulatory factors relevant to the specified company and its industry.
 
-Company: [Company Name]
+Company stock market symbol: [Company Name]
 
 Consider factors such as:
 *   Current regulatory environment and any recent changes.
