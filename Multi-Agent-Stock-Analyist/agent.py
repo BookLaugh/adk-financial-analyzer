@@ -1,10 +1,10 @@
 from google.adk.agents import Agent
 from google.adk.tools import agent_tool
 
+from .economic_agent import economic_agent
+from .historical_agent import historical_agent
 # Import specialized agents
 from .news_agent import news_agent
-from .historical_agent import historical_agent
-from .economic_agent import economic_agent
 from .political_agent import political_agent
 
 # Define the main synthesizer/orchestrator agent
@@ -54,4 +54,4 @@ Ensure the final output is well-structured and easy to read.
 """
     # Note: The root agent itself doesn't need tools if all data gathering is delegated.
     # The specialized agents have the necessary tools (e.g., google_search).
-) 
+)

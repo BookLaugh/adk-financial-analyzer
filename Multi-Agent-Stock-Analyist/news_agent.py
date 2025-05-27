@@ -14,4 +14,4 @@ Present the information as a numbered list. Output ONLY the numbered list of hea
 Provide a concise overall summary of the news sentiment if possible.
 """,
     tools=[google_search]
-) 
+)

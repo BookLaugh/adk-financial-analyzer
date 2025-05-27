@@ -20,4 +20,4 @@ Focus on the following aspects:
 Present the findings as a concise summary report. Output ONLY the report content.
 """,
     tools=[google_search]
-) 
+)

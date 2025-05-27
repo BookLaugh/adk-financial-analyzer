@@ -22,4 +22,4 @@ For each identified factor, briefly explain its current state and specifically h
 Present the findings as a concise summary report. Output ONLY the report content.
 """,
     tools=[google_search]
-) 
+)

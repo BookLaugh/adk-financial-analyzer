@@ -21,4 +21,4 @@ For each identified factor, briefly describe it and assess its potential impact 
 Present the findings as a concise summary report. Output ONLY the report content.
 """,
     tools=[google_search]
-) 
+)
